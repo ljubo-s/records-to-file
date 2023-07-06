@@ -1,0 +1,10 @@
+${AnsiColor.GREEN}
+  ____                        _       _          _____ _ _
+ |  _ \ ___  ___ ___  _ __ __| |___  | |_ ___   |  ___(_) | ___
+ | |_) / _ \/ __/ _ \| '__/ _` / __| | __/ _ \  | |_  | | |/ _ \
+ |  _ <  __/ (_| (_) | | | (_| \__ \ | || (_) | |  _| | | |  __/
+ |_| \_\___|\___\___/|_|  \__,_|___/  \__\___/  |_|   |_|_|\___|
+
+${AnsiColor.YELLOW}---  Spring Boot version --- > ${AnsiColor.GREEN}Spring Boot${spring-boot.formatted-version}
+${AnsiColor.YELLOW}---  Application version --- > ${AnsiColor.GREEN}${info.app.name} - ${info.app.environment} - (v${info.app.version})
+${AnsiStyle.NORMAL}
