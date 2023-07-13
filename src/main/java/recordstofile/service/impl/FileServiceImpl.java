@@ -31,7 +31,11 @@ public class FileServiceImpl implements FileService {
 
         Optional<FileDto> fileDtoOpt = fileRepository.recordsToFile(query.getSql(), query.getSqlParameterSource());
 
-        fileDtoOpt.ifPresent(fileDto -> fileDto.setFileSize(fileHandlerService.fileSize(fileDtoOpt.get().getFileName())));
+//        fileDtoOpt.ifPresent(fileDto -> fileDto.setFileSize(fileHandlerService.fileSize(fileDtoOpt.get().getFileName())));
+
+        if (fileDtoOpt.isPresent()){
+            fileDtoOpt.get().setFileSize(fileHandlerService.fileSize(fileDtoOpt.get().getFileName()));
+        }
 
         return fileDtoOpt;
     }
@@ -44,7 +48,11 @@ public class FileServiceImpl implements FileService {
 
         Optional<FileDto> fileDtoOpt = fileRepository.recordsToFile(query.getSql(), query.getSqlParameterSource());
 
-        fileDtoOpt.ifPresent(fileDto -> fileDto.setFileSize(fileHandlerService.fileSize(fileDtoOpt.get().getFileName())));
+//        fileDtoOpt.ifPresent(fileDto -> fileDto.setFileSize(fileHandlerService.fileSize(fileDtoOpt.get().getFileName())));
+
+        if (fileDtoOpt.isPresent()){
+            fileDtoOpt.get().setFileSize(fileHandlerService.fileSize(fileDtoOpt.get().getFileName()));
+        }
 
         return fileDtoOpt;
     }

@@ -44,10 +44,19 @@ public class TestTableServiceImpl implements TestTableService {
     @Override
     public List<TestTableDto> getAll() {
 
-        return testTableRepository.findAll()
-                                  .stream()
-                                  .map(post -> modelMapper.map(post, TestTableDto.class))
-                                  .collect(Collectors.toList());
+//        return testTableRepository.findAll()
+//                                  .stream()
+//                                  .map(post -> modelMapper.map(post, TestTableDto.class))
+//                                  .collect(Collectors.toList());
+
+        List<TestTable> listOfTestTable = testTableRepository.findAll();
+        List<TestTableDto> listOfTestTableDto = new ArrayList<>();
+
+        for (TestTable t : listOfTestTable) {
+            listOfTestTableDto.add(modelMapper.map(t, TestTableDto.class));
+        }
+
+        return listOfTestTableDto;
     }
 
     @Override

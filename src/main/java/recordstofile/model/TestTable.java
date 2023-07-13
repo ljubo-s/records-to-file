@@ -9,7 +9,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 @Getter
 @Setter
-@Table(name = "TEST_TABLE", indexes = @Index(name = "TEST_TABLE_NAME_INDX", columnList = "name"))
+@Table(name = "TEST_TABLE")
 @Entity
 public class TestTable {
 
