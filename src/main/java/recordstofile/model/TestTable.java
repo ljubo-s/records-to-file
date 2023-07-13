@@ -1,11 +1,6 @@
 package recordstofile.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import java.sql.Timestamp;
 import lombok.Getter;
@@ -14,7 +9,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 @Getter
 @Setter
-@Table(name = "TEST_TABLE")
+@Table(name = "TEST_TABLE", indexes = @Index(name = "TEST_TABLE_NAME_INDX", columnList = "name"))
 @Entity
 public class TestTable {
 
