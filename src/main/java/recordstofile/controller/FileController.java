@@ -45,15 +45,14 @@ import recordstofile.service.FileService;
                 mediaType = "application/json",
                 schema = @Schema(implementation = ApiError.class)
                 )
-        ),
-        //class level
-        @ApiResponse(
-            responseCode = "200", description = "Success",
-            content = @Content(
-                mediaType = "application/octet-stream",
-                schema = @Schema(type = "String", format = "binary")
-                )
-            )
+//        ),
+//        @ApiResponse(
+//            responseCode = "200", description = "Success",
+//            content = @Content(
+//                mediaType = "application/octet-stream",
+//                schema = @Schema(type = "String", format = "binary")
+//                )
+        )
     }
 )
 @CrossOrigin(origins = "*")
@@ -106,6 +105,15 @@ public class FileController {
     }
 
     @Operation(description = "Get all records from table, save to a file and download")
+    @ApiResponses(
+            value = {@ApiResponse(
+                    responseCode = "200", description = "Success",
+                    content = @Content(
+                            mediaType = "application/octet-stream",
+                            schema = @Schema(type = "String", format = "binary")
+                    )
+            )}
+    )
     @PostMapping(value = "/all-to-file-and-download")
     public ResponseEntity<?> toFileAndDownload() {
 
@@ -115,6 +123,15 @@ public class FileController {
     }
 
     @Operation(description = "Get records with name {name} from table, save to a file and download")
+    @ApiResponses(
+            value = {@ApiResponse(
+                    responseCode = "200", description = "Success",
+                    content = @Content(
+                            mediaType = "application/octet-stream",
+                            schema = @Schema(type = "String", format = "binary")
+                    )
+            )}
+    )
     @PostMapping(value = "/with-name-to-file-and-download/{name}")
     public ResponseEntity<?> withNameToFileAndDownload(@PathVariable("name") @Size(min = 1, max = 30) String name) {
 
@@ -125,6 +142,15 @@ public class FileController {
 
     @Operation(description = "Download a file with {fileName} from a directory")
     @GetMapping(value = "/download-file/{fileName}")
+    @ApiResponses(
+            value = {@ApiResponse(
+                    responseCode = "200", description = "Success",
+                    content = @Content(
+                            mediaType = "application/octet-stream",
+                            schema = @Schema(type = "String", format = "binary")
+                    )
+            )}
+    )
     public ResponseEntity<?> downloadFile(@PathVariable("fileName") @Size(min = 6) String fileName) {
 
         Optional<Resource> resource = fileService.getFileAsResource(fileName);
