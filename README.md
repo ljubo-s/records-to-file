@@ -12,17 +12,17 @@ Put [cert_file_name].p12 file into the "src/main/resources/keystore" directory.
 </pre>
 
 * ### Swagger  
-https://164.68.100.119:1111/records-to-file/swagger-ui/index.html  
+https://185.2.102.108:1111/records-to-file/swagger-ui/index.html  
 <pre>
 - export APIs:
 </pre>
-https://164.68.100.119:1111/records-to-file/api-docs
+https://185.2.102.108:1111/records-to-file/api-docs
 <pre>
 - import into Postman.  
 - for request with Download use Send and Download on sending request, or in response Save Response->Save to a file.  
 </pre>
 * ### Spring Boot Admin  
-http://164.68.100.119:9090/sba  
+http://185.2.102.108:9090/sba  
 <pre>
 username:sba_monitor  
 password:@0HaPnbY2N78  
