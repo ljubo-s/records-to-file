@@ -21,12 +21,6 @@ https://185.2.102.108:1111/records-to-file/api-docs
 - import into Postman.  
 - for request with Download use Send and Download on sending request, or in response Save Response->Save to a file.  
 </pre>
-* ### Spring Boot Admin  
-http://185.2.102.108:9090/sba  
-<pre>
-username:sba_monitor  
-password:@0HaPnbY2N78  
-</pre>
 
 ### Application Properties  
 Write application-related properties into "src/main/resources/application.properties". 
